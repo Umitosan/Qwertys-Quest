@@ -141,6 +141,8 @@ $(document).ready(function() {
   var newGame = new Game();
   var newChar = new Character();   // this needs to move into the game
 
+  $(".char-img").attr('src', 'img/arms1.png')
+
   // MASTER ROLL compare between char and enemy
   var compareRolls = function (roll1, roll2, char, enemy){
     if (roll1 > roll2){
@@ -265,7 +267,6 @@ $(document).ready(function() {
     let userClass = $(".char-class option:selected").val();
     let userGender = $(".char-gender option:selected").val();
     if (userClass === "Select") {
-      // $(".char-img").removeClass("src");
       $(".char-img").attr('src', 'img/arms1.png');
       $(".combat #character").removeClass();
     } else {
