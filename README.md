@@ -34,11 +34,11 @@ A Role Playing Game. Create a character, 7 options to choose from. Determine cha
 
 ## Setup/Installation Requirements
 * Ensure connection to the Internet
-* Enter the following URL in your computer browser to access the active git hub link to this page: https://ilduchea.github.io/rpg/
+* Enter the following URL in your computer browser to access the active git hub link to this page: https://Umitosan.github.io/rpg/
 OR
 * On a mac using spotlight search type in terminal
 * Once in terminal run the command: cd desktop
-* Run the command: git clone https://github.com/ilduchea/rpg
+* Run the command: git clone https://github.com/Umitosan/rpg
 * Run the command: cd rpg
 * Open index.html in chrome.
 * Run the command: atom .
