@@ -1,5 +1,7 @@
 # Querty's Quest
 
+![screenshot](img/screenshot1.png)
+
 #### _**A Role Playing Game.**_, April 13, 2017
 
 #### _**By Tyler Stephenson**_, _**Dominic Brown**_,  _**Nicky Santamaria**_
