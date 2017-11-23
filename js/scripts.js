@@ -141,7 +141,7 @@ $(document).ready(function() {
   var newGame = new Game();
   var newChar = new Character();   // this needs to move into the game
 
-  $(".char-img").attr('src', 'img/arms1.png')
+  // $(".char-img").attr('src', 'img/arms1.png')
 
   // MASTER ROLL compare between char and enemy
   var compareRolls = function (roll1, roll2, char, enemy){
