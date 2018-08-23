@@ -1,8 +1,10 @@
+/* jshint esversion: 6 */
+
 //============
 // BACK END
 //============
 function Game() {
-  this.char;
+  this.char = undefined;
   this.rollCount = 3;
   this.statsToAlloc = 5;
   this.ready = false;
@@ -40,11 +42,11 @@ Game.prototype.updateRollCount = function() {
   } else {
     console.log("you're out of rolls");
   }
-}
+};
 
 Character.prototype.addEnemy = function() {
   newGame.enemies.push(this);
-}
+};
 
 Character.prototype.charInputToStats = function() {
   this.str = parseInt($("#input-str").val());
@@ -52,7 +54,7 @@ Character.prototype.charInputToStats = function() {
   this.int = parseInt($("#input-int").val());
   this.con = parseInt($("#input-con").val());
   this.hitPoints = (this.con * 10);
-}
+};
 
 Enemy.prototype.createEnemy = function(game) {
   var str = dieRoll2to8();
@@ -66,7 +68,7 @@ Enemy.prototype.createEnemy = function(game) {
       game.enemyLevel += 2;
       // return currentEnemyLevel;
     }
-  }
+  };
   getLevelIncrement(charWins);
   let currentEnemyLevel = game.enemyLevel;
   console.log(game);
@@ -80,10 +82,10 @@ Enemy.prototype.createEnemy = function(game) {
 
   var randomEnemyClass = function() {
     return Math.floor(Math.random() * 3) + 1;
-  }
+  };
   var randomEnemyGender = function() {
     return Math.floor(Math.random() * 2) + 1;
-  }
+  };
   var enemyClassRoll = randomEnemyClass();
   var enemyGenderRoll = randomEnemyGender();
   if (enemyClassRoll === 1) {
@@ -102,7 +104,7 @@ Enemy.prototype.createEnemy = function(game) {
     this.gender = "Female";
   }
   game.enemies.unshift(this);
-}
+};
 
 var getAttackStat = function(entity){
   var str = entity.str;
@@ -119,11 +121,11 @@ var getAttackStat = function(entity){
 // random die number generator (2-8)
 var dieRoll2to8 = function() {
   return Math.floor(Math.random() * 7) + 2;
-}
+};
 // main attack roll generator
 var attackRoll = function(){
   return Math.floor(Math.random() * 20) + 1;
-}
+};
 // check for winning condition
 var checkHealth = function(char, enemy, game){
   if (enemy.hitPoints <= 0) {
@@ -131,7 +133,7 @@ var checkHealth = function(char, enemy, game){
   } else if (char.hitPoints <= 0) {
     return "You lose";
   }
-}
+};
 
 //=============
 // FRONT END
@@ -140,8 +142,6 @@ $(document).ready(function() {
 
   var newGame = new Game();
   var newChar = new Character();   // this needs to move into the game
-
-  // $(".char-img").attr('src', 'img/arms1.png')
 
   // MASTER ROLL compare between char and enemy
   var compareRolls = function (roll1, roll2, char, enemy){
@@ -169,7 +169,7 @@ $(document).ready(function() {
     $("#charDex").text(newChar.dex);
     $("#charInt").text(newChar.int);
     $("#charCon").text(newChar.con);
-  }
+  };
   // change character health bar look based on percent of HP
   var updateCharHealthBar = function() {
     // update bar LABEL
@@ -192,7 +192,7 @@ $(document).ready(function() {
     } else {
       console.log("char DIED bruh!");
     }
-  }
+  };
   // change enemy health bar look based on percent of HP
   var updateEnemyHealthBar = function() {
     // update bar LABEL
@@ -218,50 +218,8 @@ $(document).ready(function() {
     } else {
       console.log("enemy DIED, huzzah!");
     }
-  }
-  // change enemy based on...
-  var enemyImageCardChange = function(){
-    let enemy = newGame.enemies[0];
-    let enemyClass = enemy.enemyClass;
-    let enemyGender = enemy.gender;
-    if (enemyGender === "Male"){
-      switch (true){
-        case (enemyClass === "Warrior"):
-          $("#enemy").removeClass();
-          $("#enemy").addClass("dark_warrior_male1");
-          break;
-        case (enemyClass === "Mage"):
-          $("#enemy").removeClass();
-          $("#enemy").addClass("dark_wizard_male1");
-          break;
-        case (enemyClass === "Ranger"):
-          $("#enemy").removeClass();
-          $("#enemy").addClass("dark_ranger_male1");
-          break;``
-        default:
-          console.log("switch default!");
-      }  // end switch
-    } else if (enemyGender === "Female") {
-        switch (true){
-          case (enemyClass === "Warrior"):
-            $("#enemy").removeClass();
-            $("#enemy").addClass("dark_warrior_fem1");
-            break;
-          case (enemyClass === "Mage"):
-            $("#enemy").removeClass();
-            $("#enemy").addClass("dark_wizard_fem1");
-            break;
-          case (enemyClass === "Ranger"):
-            $("#enemy").removeClass();
-            $("#enemy").addClass("dark_ranger_fem1");
-            break;
-          default:
-            console.log("switch default!");
-        }
-    } else {
-        console.log("gender neutral")
-    } // END IF statement
   };
+
   // function to handle ALL char image changes
   var charImageCardChange = function() {
     let userClass = $(".char-class option:selected").val();
@@ -315,10 +273,55 @@ $(document).ready(function() {
         $(".combat #character").removeClass();
         $(".combat #character").addClass("unicorn1");
       } else {
-          console.log("need to select")
+          console.log("need to select");
       } // END sub IF
     } // END master IF
-  } // END charImageCardChange function
+  }; // END charImageCardChange function
+
+  // change enemy based on...
+  var enemyImageCardChange = function(){
+    let enemy = newGame.enemies[0];
+    let enemyClass = enemy.enemyClass;
+    let enemyGender = enemy.gender;
+    if (enemyGender === "Male"){
+      switch (true){
+        case (enemyClass === "Warrior"):
+          $("#enemy").removeClass();
+          $("#enemy").addClass("dark_warrior_male1");
+          break;
+        case (enemyClass === "Mage"):
+          $("#enemy").removeClass();
+          $("#enemy").addClass("dark_wizard_male1");
+          break;
+        case (enemyClass === "Ranger"):
+          $("#enemy").removeClass();
+          $("#enemy").addClass("dark_ranger_male1");
+          break;
+        default:
+          console.log("switch default!");
+      }  // end switch
+    } else if (enemyGender === "Female") {
+        switch (true){
+          case (enemyClass === "Warrior"):
+            $("#enemy").removeClass();
+            $("#enemy").addClass("dark_warrior_fem1");
+            break;
+          case (enemyClass === "Mage"):
+            $("#enemy").removeClass();
+            $("#enemy").addClass("dark_wizard_fem1");
+            break;
+          case (enemyClass === "Ranger"):
+            $("#enemy").removeClass();
+            $("#enemy").addClass("dark_ranger_fem1");
+            break;
+          default:
+            console.log("switch default!");
+        }
+    } else {
+        console.log("gender neutral");
+    } // END IF statement
+  };
+
   // check that character creation is complete before proceeding to combat
   var checkGameReady = function() {
     $("#no-name").text("");
@@ -343,7 +346,7 @@ $(document).ready(function() {
       newGame.ready = true;
     }
     return newGame.ready;
-  }
+  };
   // START the game
   $("#start-btn").click(function(){
     $("#intro-well").hide();
@@ -385,9 +388,9 @@ $(document).ready(function() {
   // LEVEL UP BUTTON
   $("#levelUpBtn").click(function() {
     //disable name, class, gender inputs
-    $("#input-name").attr('disabled', 'disabled')
-    $(".char-creation .char-class").attr('disabled', 'disabled')
-    $(".char-creation .char-gender").attr('disabled', 'disabled')
+    $("#input-name").attr('disabled', 'disabled');
+    $(".char-creation .char-class").attr('disabled', 'disabled');
+    $(".char-creation .char-gender").attr('disabled', 'disabled');
     // transition play area
     // show and hide proper rows
     $(".combat").hide();
@@ -397,7 +400,7 @@ $(document).ready(function() {
     $("#stats-left").text(newGame.statsToAlloc);
     // show statup images
     $(".char-stats-alloc").fadeIn(600);
-    $("#table2 .stat-cross-img").fadeIn(600)
+    $("#table2 .stat-cross-img").fadeIn(600);
     // change header text to say level up
     $("#char-title1").text("LEVEL UP!");
     $("#char-title2").text("...you feel yourself growing stronger...");
@@ -419,7 +422,7 @@ $(document).ready(function() {
       $("#input-int").val( parseInt($("#input-int").val()) + 1 );
     } else if (statClicked === "statUpCon") {
       $("#input-con").val( parseInt($("#input-con").val()) + 1 );
-      $("#input-hp").val(parseInt($("#input-con").val()) * 10)
+      $("#input-hp").val(parseInt($("#input-con").val()) * 10);
     } else {
       console.log("statClicked problem");
     }
@@ -565,7 +568,7 @@ $(document).ready(function() {
     $("#character, #enemy, #try-again").removeClass("winner enemy-lose char-lose");
     $(".combat").hide();
     $("#row-loser").show();
-  })
+  });
   // simple page reload button, used on game over screen
   $(".reset-btn").click(function() {
     location.reload();
