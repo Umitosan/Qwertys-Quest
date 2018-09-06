@@ -9,7 +9,7 @@
 ## Description
 A Role Playing Game. Create a character, 7 options to choose from. Determine character stats. Fight against random enemies, 6 total enemy characters.
 
-* View the live site here: http://qwertysquest.dombrown.net/
+* View the live site [HERE](http://qwertysquest.dombrown.net/)
 
 ## Specifications
 
