@@ -71,7 +71,6 @@ Enemy.prototype.createEnemy = function(game) {
   };
   getLevelIncrement(charWins);
   let currentEnemyLevel = game.enemyLevel;
-  console.log(game);
   //End enemy level check
 
   this.str = str;
@@ -197,8 +196,6 @@ $(document).ready(function() {
   var updateEnemyHealthBar = function() {
     // update bar LABEL
     let tmpEnemy = newGame.enemies[0];
-    // console.log("enemies[0]", tmpEnemy);
-    // console.log("typeof tmpEnemy.hitPoints :", typeof tmpEnemy.hitPoints);
     $(".enemy-hp-bar span").text(tmpEnemy.hitPoints + " / " + (tmpEnemy.con * 10));
     // update bar FILL
     let percentFull = Math.round( (tmpEnemy.hitPoints / (tmpEnemy.con * 10) ) * 100 );
@@ -225,23 +222,23 @@ $(document).ready(function() {
     let userClass = $(".char-class option:selected").val();
     let userGender = $(".char-gender option:selected").val();
     if (userClass === "Select") {
-      $(".char-img").attr('src', 'img/arms1.png');
+      $(".char-img").attr('src', 'img/sm_png/arms1.png');
       $(".combat #character").removeClass();
     } else {
       if (userGender === "Male") {
         switch (true) {
           case (userClass === "Warrior"):
-            $(".char-img").attr('src', 'img/warrior_male1.png');
+            $(".char-img").attr('src', 'img/sm_png/warrior_male1.png');
             $(".combat #character").removeClass();
             $(".combat #character").addClass("warrior_male1");
             break;
           case (userClass === "Mage"):
-            $(".char-img").attr('src', 'img/mage_male1.png');
+            $(".char-img").attr('src', 'img/sm_png/mage_male1.png');
             $(".combat #character").removeClass();
             $(".combat #character").addClass("mage_male1");
             break;
           case (userClass === "Ranger"):
-            $(".char-img").attr('src', 'img/ranger_male1.png');
+            $(".char-img").attr('src', 'img/sm_png/ranger_male1.png');
             $(".combat #character").removeClass();
             $(".combat #character").addClass("ranger_male1");
             break;
@@ -251,17 +248,17 @@ $(document).ready(function() {
       } else if (userGender === "Female") {
         switch (true) {
           case (userClass === "Warrior"):
-            $(".char-img").attr('src', 'img/warrior_fem1.png');
+            $(".char-img").attr('src', 'img/sm_png/warrior_fem1.png');
             $(".combat #character").removeClass();
             $(".combat #character").addClass("warrior_fem1");
             break;
           case (userClass === "Mage"):
-            $(".char-img").attr('src', 'img/mage_fem1.png');
+            $(".char-img").attr('src', 'img/sm_png/mage_fem1.png');
             $(".combat #character").removeClass();
             $(".combat #character").addClass("mage_fem1");
             break;
           case (userClass === "Ranger"):
-            $(".char-img").attr('src', 'img/ranger_fem1.png');
+            $(".char-img").attr('src', 'img/sm_png/ranger_fem1.png');
             $(".combat #character").removeClass();
             $(".combat #character").addClass("ranger_fem1");
             break;
@@ -269,7 +266,7 @@ $(document).ready(function() {
             console.log("switch default!");
         }  // end switch
       } else if (userGender === "Other") {
-        $(".char-img").attr('src', 'img/unicorn1.png');
+        $(".char-img").attr('src', 'img/sm_png/unicorn1.png');
         $(".combat #character").removeClass();
         $(".combat #character").addClass("unicorn1");
       } else {
@@ -558,12 +555,6 @@ $(document).ready(function() {
   });  // END #attackBtn function
   // TRY AGAIN text when char dies
   $("#try-again").click(function(){
-    // var currentEnemy = newGame.enemies[0];
-    // newChar.hitPoints = (newChar.con * 10);
-    // currentEnemy.hitPoints = (currentEnemy.con * 10);
-    // updateCharHealthBar();
-    // updateEnemyHealthBar();
-    // $("#attackBtn").show();
     $("#try-again, #character").toggleClass("hide");
     $("#character, #enemy, #try-again").removeClass("winner enemy-lose char-lose");
     $(".combat").hide();

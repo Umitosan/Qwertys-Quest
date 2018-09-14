@@ -177,7 +177,7 @@ body {
 
 #char-card {
   height: 640px;
-  background-image: url("../img/card1.png");
+  background-image: url("../img/sm_png/card1.png");
   background-repeat: no-repeat;
   border-radius: 30px;
   border-style: none;
@@ -194,7 +194,7 @@ body {
 }
 
 #char-class {
-  background-image: url("../img/warrior1.png");
+  background-image: url("../img/sm_png/warrior1.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain; /*keeps the whole image with in the area*/
@@ -463,70 +463,70 @@ body {
 }
 
 .warrior_male1 {
-  background: url("../img/warrior_male1.png") no-repeat center;
+  background: url("../img/sm_png/warrior_male1.png") no-repeat center;
   background-size: contain;
 }
 
 .mage_male1 {
-  background: url("../img/mage_male1.png") no-repeat center;
+  background: url("../img/sm_png/mage_male1.png") no-repeat center;
   background-size: contain;
 }
 
 .ranger_male1{
-  background: url("../img/ranger_male1.png") no-repeat center;
+  background: url("../img/sm_png/ranger_male1.png") no-repeat center;
   background-size: contain;
 }
 
 .warrior_fem1 {
-  background: url("../img/warrior_fem1.png") no-repeat center;
+  background: url("../img/sm_png/warrior_fem1.png") no-repeat center;
   background-size: contain;
 }
 
 .mage_fem1 {
-  background: url("../img/mage_fem1.png") no-repeat center;
+  background: url("../img/sm_png/mage_fem1.png") no-repeat center;
   background-size: contain;
 }
 
 .ranger_fem1{
-  background: url("../img/ranger_fem1.png") no-repeat center;
+  background: url("../img/sm_png/ranger_fem1.png") no-repeat center;
   background-size: contain;
 }
 
 .enemy_card{
-  background: url("../img/enemy/enemy_card.png") no-repeat center;
+  background: url("../img/sm_png/enemy_card.png") no-repeat center;
   background-size: contain;
 }
 
 .dark_warrior_male1{
-  background: url("../img/enemy/dark_warrior_male1.png") no-repeat center;
+  background: url("../img/sm_png/dark_warrior_male1.png") no-repeat center;
   background-size: contain;
 }
 
 .dark_wizard_male1{
-  background: url("../img/enemy/dark_wizard_male1.png") no-repeat center;
+  background: url("../img/sm_png/dark_wizard_male1.png") no-repeat center;
   background-size: contain;
 }
 
 .dark_ranger_male1{
-  background: url("../img/enemy/dark_ranger_male1.png") no-repeat center;
+  background: url("../img/sm_png/dark_ranger_male1.png") no-repeat center;
   background-size: contain;
 }
 .dark_warrior_fem1{
-  background: url("../img/enemy/dark_warrior_fem1.png") no-repeat center;
+  background: url("../img/sm_png/dark_warrior_fem1.png") no-repeat center;
   background-size: contain;
 }
 
 .dark_wizard_fem1{
-  background: url("../img/enemy/dark_wizard_fem1.png") no-repeat center;
+  background: url("../img/sm_png/dark_wizard_fem1.png") no-repeat center;
   background-size: contain;
 }
 
 .dark_ranger_fem1{
-  background: url("../img/enemy/dark_ranger_fem1.png") no-repeat center;
+  background: url("../img/sm_png/dark_ranger_fem1.png") no-repeat center;
   background-size: contain;
 }
 
 .unicorn1 {
-  background: url("../img/unicorn1.png") no-repeat center;
+  background: url("../img/sm_png/unicorn1.png") no-repeat center;
   background-size: contain;
 }
